@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd ubuntu-base
 docker build -t sepe/ubuntu-base .
 

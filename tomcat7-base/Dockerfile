@@ -2,14 +2,14 @@ FROM sepe/java7-base
 
 MAINTAINER Sebastian Peters <Sebastian.Peters@gmail.com>
 
-RUN wget -nv --no-cookies http://mirror.23media.de/apache/tomcat/tomcat-7/v7.0.55/bin/apache-tomcat-7.0.55.tar.gz -O /tmp/apache-tomcat.tar.gz
+RUN wget -nv --no-cookies http://mirror.23media.de/apache/tomcat/tomcat-7/v7.0.56/bin/apache-tomcat-7.0.56.tar.gz -O /tmp/apache-tomcat.tar.gz
 
 # Check the checksum, if it fails, print an error message
-RUN echo "3c46fc0f608c1280dcd65100a983f285 /tmp/apache-tomcat.tar.gz" | md5sum -c > /dev/null 2>&1 || echo "ERROR: MD5SUM MISMATCH"
+RUN echo "2887d0e3ca18bdca63004a0388c99775 /tmp/apache-tomcat.tar.gz" | md5sum -c > /dev/null 2>&1 || echo "ERROR: MD5SUM MISMATCH"
 
 RUN tar xzf /tmp/apache-tomcat.tar.gz -C /opt
 RUN rm /tmp/apache-tomcat.tar.gz
-RUN mv /opt/apache-tomcat-7.0.55 /opt/apache-tomcat
+RUN mv /opt/apache-tomcat-7.0.56 /opt/apache-tomcat
 
 # configure tomcat user admin/admin for probe access
 RUN wget --no-check-certificate https://www.dropbox.com/s/fku4dum4jsa0172/tomcat-users.xml -O /opt/apache-tomcat/conf/tomcat-users.xml

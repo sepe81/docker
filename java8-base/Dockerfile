@@ -2,7 +2,7 @@ FROM sepe/ubuntu-base
 
 MAINTAINER Sebastian Peters <Sebastian.Peters@gmail.com>
 
-RUN wget -nv --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" --progress=bar:force http://download.oracle.com/otn-pub/java/jdk/8u20-b26/server-jre-8u20-linux-x64.tar.gz -O /tmp/server-jre.tar.gz
+RUN wget -nv --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/server-jre-8u20-linux-x64.tar.gz -O /tmp/server-jre.tar.gz
 
 # Check the checksum, if it fails, print an error message
 RUN echo "659fb0b707d125c05c1e81beb95392cc /tmp/server-jre.tar.gz" | md5sum -c > /dev/null 2>&1 || echo "ERROR: MD5SUM MISMATCH"

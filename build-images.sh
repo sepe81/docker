@@ -1,12 +1,15 @@
 #!/bin/sh
 cd ubuntu-base
-docker build -t sepe/ubuntu-base .
+./build.sh
 
 cd ../java7-base
-docker build -t sepe/java7-base .
+./build.sh
+
+cd ../java8-base
+./build.sh
 
 cd ../tomcat7-base
-docker build -t sepe/tomcat7-base .
+./build.sh
 
 cd ../tomcat7-probe
-docker build -t sepe/tomcat7-probe .
+./build.sh

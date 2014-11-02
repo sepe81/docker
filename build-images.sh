@@ -13,3 +13,6 @@ cd ../tomcat7-base
 
 cd ../tomcat7-probe
 ./build.sh
+
+cd ../tomcat8-base
+./build.sh

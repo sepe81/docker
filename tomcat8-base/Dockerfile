@@ -1,4 +1,4 @@
-FROM sepe/java-base
+FROM sepe/java8-base
 
 MAINTAINER Sebastian Peters <Sebastian.Peters@gmail.com>
 

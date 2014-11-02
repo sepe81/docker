@@ -1,0 +1,29 @@
+FROM sepe/java-base
+
+MAINTAINER Sebastian Peters <Sebastian.Peters@gmail.com>
+
+# download tomcat as tar.gz
+# check the checksum, if it fails, print an error message
+# untar, move to correct location and cleanup
+RUN wget -nv --no-cookies http://mirrors.ae-online.de/apache/tomcat/tomcat-8/v8.0.14/bin/apache-tomcat-8.0.14.tar.gz \
+  -O /tmp/apache-tomcat.tar.gz && \
+  echo "96063b1e477869e8ff4801d777e8915b /tmp/apache-tomcat.tar.gz" | \
+    md5sum -c > /dev/null 2>&1 || echo "ERROR: MD5SUM MISMATCH" && \
+  tar xzf /tmp/apache-tomcat.tar.gz -C /opt && \
+  mv /opt/apache-tomcat-8.0.14 /opt/apache-tomcat && \
+  rm /tmp/apache-tomcat.tar.gz
+
+# configure tomcat user admin/admin for probe access
+RUN wget --no-check-certificate https://www.dropbox.com/s/fku4dum4jsa0172/tomcat-users.xml -O /opt/apache-tomcat/conf/tomcat-users.xml
+
+# The following volumes should not be considered part of the image, but contain runtime data
+VOLUME ["/opt/apache-tomcat/logs", "/opt/apache-tomcat/work", "/opt/apache-tomcat/temp", "/tmp/hsperfdata_root"]
+
+ENV CATALINA_HOME /opt/apache-tomcat
+ENV PATH $PATH:$CATALINA_HOME/bin
+
+EXPOSE 8080
+
+# Start Tomcat in the foreground (run) to make sure docker does not immediately shutdown the container
+ENTRYPOINT ["/opt/apache-tomcat/bin/catalina.sh"]
+CMD ["configtest"]

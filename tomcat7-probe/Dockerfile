@@ -1,4 +1,4 @@
-FROM sepe/tomcat7-base
+FROM sepe/tomcat7-java7
 
 MAINTAINER Sebastian Peters <Sebastian.Peters@gmail.com>
 

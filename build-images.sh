@@ -8,11 +8,17 @@ cd ../java7-base
 cd ../java8-base
 ./build.sh
 
-cd ../tomcat7-base
+cd ../tomcat7-java7
+./build.sh
+
+cd ../tomcat7-java8
 ./build.sh
 
 cd ../tomcat7-probe
 ./build.sh
 
-cd ../tomcat8-base
+cd ../tomcat8-java7
+./build.sh
+
+cd ../tomcat8-java8
 ./build.sh

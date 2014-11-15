@@ -1,7 +1,6 @@
 image:  sepe/tomcat7-java8
 name:   tomcat7
 detach: true
+command: run
 publish:
   - 8080:8080
-exec:
-  - run

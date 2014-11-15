@@ -2,6 +2,8 @@
 
 alias dki="docker images"
 alias dkps="docker ps -a"
+alias dklog="docker logs -f"
+alias dkstop="docker stop"
 
 # stop all containers
 alias dkstopa="docker ps -q | xargs docker stop"

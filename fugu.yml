@@ -4,3 +4,4 @@ detach: true
 command: run
 publish:
   - 8080:8080
+  

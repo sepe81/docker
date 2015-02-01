@@ -5,9 +5,9 @@ MAINTAINER Sebastian Peters <Sebastian.Peters@gmail.com>
 # download tomcat as tar.gz
 # check the checksum, if it fails, print an error message
 # untar, move to correct location and cleanup
-RUN wget -nv --no-cookies http://mirror.23media.de/apache/tomcat/tomcat-8/v8.0.15/bin/apache-tomcat-8.0.15.tar.gz \
+RUN wget -nv --no-cookies http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.18/bin/apache-tomcat-8.0.18.tar.gz \
   -O /tmp/apache-tomcat.tar.gz && \
-  echo "72c1057e501e50fc4033087a105dfd7 /tmp/apache-tomcat.tar.gz" | \
+  echo "00a4f4790e777a2c5b1ed966de3e2f56 /tmp/apache-tomcat.tar.gz" | \
     md5sum -c > /dev/null 2>&1 || echo "ERROR: MD5SUM MISMATCH" && \
   tar xzf /tmp/apache-tomcat.tar.gz -C /opt && \
   mv /opt/apache-tomcat-8.0.15 /opt/apache-tomcat && \

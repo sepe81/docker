@@ -10,7 +10,7 @@ RUN wget -nv --no-cookies http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.18
   echo "00a4f4790e777a2c5b1ed966de3e2f56 /tmp/apache-tomcat.tar.gz" | \
     md5sum -c > /dev/null 2>&1 || echo "ERROR: MD5SUM MISMATCH" && \
   tar xzf /tmp/apache-tomcat.tar.gz -C /opt && \
-  mv /opt/apache-tomcat-8.0.15 /opt/apache-tomcat && \
+  mv /opt/apache-tomcat-8.0.18 /opt/apache-tomcat && \
   rm /tmp/apache-tomcat.tar.gz
 
 # configure tomcat user admin/admin for probe access

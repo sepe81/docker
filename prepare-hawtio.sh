@@ -9,4 +9,4 @@ if [ ! -f $DOWNLOADS/$NAME ]; then
 fi
 
 mkdir -v -p $WEBAPPS
-cp -v $DOWNLOADS/$NAME $WEBAPPS/$NAME 
+cp -v $DOWNLOADS/$NAME $WEBAPPS/$NAME

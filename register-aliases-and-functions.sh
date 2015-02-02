@@ -4,17 +4,18 @@ alias dki="docker images"
 alias dkps="docker ps -a"
 alias dklog="docker logs -f"
 alias dkstop="docker stop"
+alias dkrm="docker rm -v"
 
 # stop all containers
 alias dkstopa="docker ps -q | xargs docker stop"
 
 # remove all exited containers
 dkrme() {
-	docker ps -a | grep Exit | awk '{print $1}' | xargs docker rm
+	docker ps -a | grep Exit | awk '{print $1}' | xargs docker rm -v
 }
 
 # removes all non-running containers
-dkrm() {
+dkrma() {
 	docker rm $(docker ps -q -a)
 }
 

@@ -5,7 +5,7 @@ WEBAPPS="$(dirname "$BASH_SOURCE")"/webapps
 
 if [ ! -f $DOWNLOADS/$NAME ]; then
 	mkdir -v -p $DOWNLOADS
-	curl -L -o $DOWNLOADS/$NAME "https://oss.sonatype.org/content/repositories/public/io/hawt/hawtio-default/1.4.46/hawtio-default-1.4.46.war";
+	curl -L -o $DOWNLOADS/$NAME "https://oss.sonatype.org/content/repositories/public/io/hawt/hawtio-default/1.4.51/hawtio-default-1.4.51.war";
 fi
 
 mkdir -v -p $WEBAPPS

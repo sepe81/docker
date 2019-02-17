@@ -1,7 +1,7 @@
 # inspired from http://www.kartar.net/2014/03/some-useful-docker-bash-functions-and-aliases/
 
-alias dki="docker images"
-alias dkps="docker ps -a"
+alias dki="docker image ls"
+alias dkps="docker container ls -a"
 alias dklog="docker logs -f"
 alias dkstop="docker stop"
 alias dkrm="docker rm -v"

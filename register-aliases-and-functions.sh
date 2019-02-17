@@ -24,6 +24,8 @@ dkrmi() {
 	docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
 }
 
+alias dkh="docker inspect --format='{{json .State.Health}}'"
+
 # Getting the IP address of a given container
 alias dkip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 

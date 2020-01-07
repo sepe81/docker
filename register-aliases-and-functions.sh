@@ -21,7 +21,7 @@ dkrma() {
 
 # remove images labeled "<none>"
 dkrmi() {
-	docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+	docker rmi $(docker images | grep "<none>" | awk '{print $3}')
 }
 
 alias dkh="docker inspect --format='{{json .State.Health}}'"

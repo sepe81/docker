@@ -3,6 +3,7 @@
 alias dki="docker image ls"
 alias dkps="docker container ls -a"
 alias dklog="docker logs -f"
+alias dkhist="docker history --no-trunc"
 alias dkstop="docker stop"
 alias dkrm="docker rm -v"
 
